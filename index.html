@@ -22,12 +22,18 @@
       <button @click="addGoal">Add Goal</button>
       <p v-if="goals.length === 0">No goals have been added yet - please start adding some!</p>
       <ul v-else>
-        <li>Goal</li>
+        <li v-for="(goal, index) in goals">{{ index }} - {{ goal }}</li>
       </ul>
       <!-- <p v-show="goals.length === 0">No goals have been added yet - please start adding some!</p>
       <ul v-show="goals.length > 0">
         <li>Goal</li>
       </ul> This not remove the elements, instead v-show only hide the elements-->
+      <!-- <ul>
+        <li v-for="(value, key, index) in {name: 'Max', age: 31}">{{ key }}: {{ value }} - {{ index }}</li>
+      </ul> We can use v-for objects also-->
+      <!-- <ul>
+        <li v-for="num in 10">{{ num }}</li>
+      </ul> We can loop the numbers also-->
     </section>
   </body>
 </html>
